@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: default
 
 variables:
   solution: '**/*.sln'
@@ -15,18 +15,24 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
+#- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-- task: UseDotNet@2
-  inputs:
-    version: '9.x'
+#- task: UseDotNet@2
+#  inputs:
+ #   version: '9.x'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/Output'
+
 
 
