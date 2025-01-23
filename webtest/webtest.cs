@@ -15,10 +15,10 @@ public class Webtest
 }
 
 public void AddCheckFunction() {
-    Functions func= new Functions()
+    Functions func= new Functions();
     int y = func.Add(3,2);
     bool result = false;
     if (y=5) result = true;
-    Assert.True(result, "The value should be equal to 5")
+    Assert.True(result, "The value should be equal to 5");
 
 }

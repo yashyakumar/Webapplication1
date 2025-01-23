@@ -1,0 +1,8 @@
+/home/unknown/Devops/AZ400/Webapps/webtest/bin/Debug/net9.0/.msCoverageSourceRootsMapping_webtest
+/home/unknown/Devops/AZ400/Webapps/webtest/bin/Debug/net9.0/CoverletSourceRootsMapping_webtest
+/home/unknown/Devops/AZ400/Webapps/webtest/obj/Debug/net9.0/webtest.csproj.AssemblyReference.cache
+/home/unknown/Devops/AZ400/Webapps/webtest/obj/Debug/net9.0/webtest.GeneratedMSBuildEditorConfig.editorconfig
+/home/unknown/Devops/AZ400/Webapps/webtest/obj/Debug/net9.0/webtest.AssemblyInfoInputs.cache
+/home/unknown/Devops/AZ400/Webapps/webtest/obj/Debug/net9.0/webtest.AssemblyInfo.cs
+/home/unknown/Devops/AZ400/Webapps/webtest/obj/Debug/net9.0/webtest.csproj.CoreCompileInputs.cache
+/home/unknown/Devops/AZ400/Webapps/webtest/obj/Debug/net9.0/webtest.sourcelink.json
