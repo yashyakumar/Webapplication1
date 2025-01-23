@@ -30,7 +30,7 @@ steps:
   inputs:
     command: 'test'
     projects: '**/webtest.csproj'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutput=$(Build.SourcesDirectory)/Mycoverage/ /p:CoverletOutputFormat=cobertura'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutput=$(Build.SourcesDirectory)/coverage/ /p:CoverletOutputFormat=cobertura'
     publishTestResults: true
 
 # Debug coverage file location
@@ -43,7 +43,7 @@ steps:
 - task: PublishCodeCoverageResults@2
   displayName: 'Publish code coverage results'
   inputs:
-    summaryFileLocation: '$(Build.SourcesDirectory)/Mycoverage/coverage.cobertura.xml'
+    summaryFileLocation: '$(Build.SourcesDirectory)/coverage/coverage.cobertura.xml'
 
 # Publish the build artifacts
 - task: DotNetCoreCLI@2
