@@ -36,7 +36,7 @@ steps:
 # Debug coverage file location
 - script: |
     echo "Checking coverage file..."
-    ls $(Build.SourcesDirectory)/Mycoverage/
+    ls $(Build.SourcesDirectory)/coverage/
   displayName: 'Debug coverage file location'
 
 # Publish code coverage results
