@@ -1,3 +1,8 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
 trigger:
 - main
 
@@ -10,45 +15,47 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-# Restore dependencies
+#- task: NuGetToolInstaller@1
+
+#- task: NuGetCommand@2
+ # inputs:
+  #  restoreSolution: '$(solution)'
+#- task: UseDotNet@2
+#  inputs:
+ #   version: '9.x'
 - task: DotNetCoreCLI@2
   displayName: 'Restore dependencies'
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
-
-# Build the project
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 
-# Run tests and collect code coverage
 - task: DotNetCoreCLI@2
-  displayName: 'Testing and code coverage'
+  displayName: "testing and code coverage"
   inputs:
     command: 'test'
     projects: '**/webtest.csproj'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutput=$(Build.SourcesDirectory)/coverage/ /p:CoverletOutputFormat=cobertura'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./Mycoverage/'
     publishTestResults: true
 
-# Debug coverage file location
-- script: |
-    echo "Checking coverage file..."
-    ls $(Build.SourcesDirectory)/coverage/
-  displayName: 'Debug coverage file location'
-
-# Publish code coverage results
 - task: PublishCodeCoverageResults@2
-  displayName: 'Publish code coverage results'
+  displayName: "publish code coverage results"
   inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/coverage/coverage.cobertura.xml'
+   summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/Mycoverage/coverage.cobertura.xml'
 
-# Publish the build artifacts
+
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     publishWebProjects: true
     arguments: '--configuration $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)'
+
+
+
+
+
