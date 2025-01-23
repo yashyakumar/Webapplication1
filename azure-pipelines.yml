@@ -35,10 +35,18 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: "testing and code coverage"
   inputs:
     command: 'test'
     projects: '**/webtest.csproj'
     arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./coverage/'
+    publishTestResults: true
+
+- task: PublishCodeCoverageResults@2
+  displayName: "publish code coverage results"
+  inputs:
+   summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/Mycoverage/coverage.cobertura.xml'
+
 
 
 - task: DotNetCoreCLI@2
@@ -46,9 +54,7 @@ steps:
     command: 'publish'
     publishWebProjects: true
     arguments: '--configuration $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)'
-- task: WhiteSource@21
-  inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
+
 
 
 
