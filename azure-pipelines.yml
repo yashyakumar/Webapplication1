@@ -43,6 +43,7 @@ steps:
 - task: PublishCodeCoverageResults@2
   displayName: 'Publish code coverage results'
   inputs:
+    codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(Build.SourcesDirectory)/coverage/coverage.cobertura.xml'
 
 # Publish the build artifacts
