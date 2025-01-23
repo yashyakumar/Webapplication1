@@ -95,3 +95,7 @@
 /home/unknown/Devops/AZ400/Webapps/WebApplication1/obj/Debug/net9.0/WebApplication1.pdb
 /home/unknown/Devops/AZ400/Webapps/WebApplication1/obj/Debug/net9.0/WebApplication1.genruntimeconfig.cache
 /home/unknown/Devops/AZ400/Webapps/WebApplication1/obj/Debug/net9.0/ref/WebApplication1.dll
+/home/unknown/Devops/AZ400/Webapps/WebApplication1/bin/Debug/net9.0/Newtonsoft.Json.dll
+/home/unknown/Devops/AZ400/Webapps/WebApplication1/obj/Debug/net9.0/WebApplication1.csproj.AssemblyReference.cache
+/home/unknown/Devops/AZ400/Webapps/WebApplication1/obj/Debug/net9.0/WebApplication1.sourcelink.json
+/home/unknown/Devops/AZ400/Webapps/WebApplication1/obj/Debug/net9.0/WebAppli.7D14BD69.Up2Date
