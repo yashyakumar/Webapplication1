@@ -1,3 +1,4 @@
+# Disabled the workflow so testing the commit whether it will trigger the pipeline
 on:
   push:
     branches: [ "main" ]
