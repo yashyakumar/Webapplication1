@@ -17,4 +17,4 @@ jobs:
         azure-pipeline-name: Webapp
     # Set/Overwrite pipeline variables
     # Paste personal access token of the user as value of secret variable:AZURE_DEVOPS_TOKEN
-        azure-devops-token: GIT_AZ_PIPE_TOKEN
+        azure-devops-token: ${{ secrets.GIT_AZ_PIPE_TOKEN }}
